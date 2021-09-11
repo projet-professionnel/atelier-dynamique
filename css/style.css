@@ -1,0 +1,99 @@
+.configuration {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #272bad;
+}
+
+.configuration input {
+    padding: 1em;
+    border: 0;
+    font-size: 1.2em;
+    width: 10em;
+    margin-right: 2px;
+}
+
+.configuration input:first-child {
+    border-radius: 0.5em 0 0 0.5em
+}
+
+.configuration button {
+    padding: 1em;
+    border: 0;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #9957e4;
+    border-radius: 0 0.5em 0.5em 0
+}
+
+#invader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* pour faire une opération sur des propriétés avec des unités différentes, on peut utiliser la fonction CSS calc qui indique au navigateur qu'il a une opération à faire*/
+    min-height: calc(100vh - 150px);
+    background: linear-gradient(45deg, #3c40c6 0%, #6d57cf 100%);
+}
+
+.line {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pixel {
+    background-color: #838e9a;
+    border: 2px solid #d4dae1;
+    cursor: pointer;
+}
+
+/* complément CSS pour la gestion de la palette */
+
+.pixel--plain, .palette__color--plain {
+    background-color: #d2dae2;
+    border-color: #808e9b;
+}
+
+.pixel--empty, .palette__color--empty {
+    background-color: #485460;
+    border-color: #1e272e;
+}
+
+.pixel--light, .palette__color--light {
+    background-color: #ffc048;
+    border-color: #ffa801;
+}
+
+.pixel--highlight, .palette__color--highlight {
+    background-color: #0be881;
+    border-color: #05c46b;
+}
+
+.palette {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.5em;
+}
+
+.palette__color {
+    margin: .5em;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.palette__color:hover {
+    transform: scale(1.1);
+}
+
+.palette__color--active, .palette__color--active:hover {
+    transform: scale(1.4);
+}
